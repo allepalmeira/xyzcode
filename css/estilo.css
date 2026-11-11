@@ -1,0 +1,1539 @@
+@import url("https://use.typekit.net/bjg4qzy.css");
+
+/*
+font-family: paralucent-stencil, sans-serif;
+font-weight: 500;
+font-style: normal;
+ 
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+*/
+
+/* ================= Variáveis de layout ==================== */
+
+:root {
+  --cor-texto: #333333;
+  --cor-texto-suave: #ccc;
+  --cor-principal: #00c2ff;
+  --cor-destaque: #ff6b00;
+
+  --largura-maxima: 1500px;
+
+  --texto-tamanho: 12px; /* rem ou em - 30px / 12px =  1,875em */
+
+  --font-menu: paralucent-stencil, sans-serif;
+  --fonte-base: neue-haas-grotesk-display, sans-serif;
+}
+/* ================= Fim das Variáveis de layout ============= */
+
+body {
+  font: 300 1em/1.5em var(--fonte-base);
+  /*  
+    font-weight: 300;
+    font-size: 1em;    ( 16px / 16px = 1em )
+    line-height: 1.5; ( 1.5 * 16 = 24px )
+    font-family: var(--fonte-base); 
+  */
+  color: var(--cor-texto);
+}
+
+h1,
+h2,
+h3 p {
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+a {
+  color: var(--cor-principal);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  /* 
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: var(--cor-destaque); 
+  */
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--largura-maxima);
+  width: 100%;
+  margin: 0 auto; /* margin-inline: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 24px;
+  gap: 2.5em;
+}
+
+.topo {
+  background-color: #fff;
+  padding-block: 20px;
+}
+
+.topo h1 {
+  width: 331px;
+  height: 90px;
+  background-image: url(../img/logoColor.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  text-indent: -9999px;
+  margin-bottom: 0;
+}
+
+.topo nav {
+  flex: 1;
+}
+
+.topo nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.topo nav ul li a {
+  color: var(--cor-principal); /* link ativo #ff6b00 */
+  /*  
+        pt  - Ponto tipográfico - 30pt 
+        px  - Pixel - 39.99px
+        %   - Medida relativa 100%
+        em  - Medida relativa com base no elemento Pai - 1em
+        rem - Medida relativa com base no elemento Raiz - 1rem
+    */
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-family: var(--font-menu);
+  padding-block: 0.5em;
+  padding-inline: 1.2em;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+/* .topo nav ul li a.ativo */
+.ativo {
+  color: var(--cor-destaque) !important;
+}
+
+.topo nav ul li a:hover {
+  color: var(--cor-destaque);
+  transform: scale(1.05);
+}
+
+.topo nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.2em;
+  width: 0%;
+  height: 2px;
+  background: var(--cor-destaque);
+  box-shadow: 0 0 10px var(--cor-destaque);
+  transition: width 0.3s ease;
+}
+
+.topo nav ul li a:hover::after,
+.topo nav ul li a.ativo::after {
+  width: 100%;
+}
+
+.redes {
+  display: flex;
+  gap: 1em;
+}
+
+.redes a {
+  inline-size: 32px;
+  block-size: 32px;
+  background-color: #1a1a1a;
+  border-radius: 50px;
+  display: grid;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.redes a:hover {
+  background-color: var(--cor-destaque);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--cor-principal);
+}
+
+/* ############################# BANNER ############################ */
+
+.banner .slick-next {
+  right: 80px;
+}
+
+.banner .slick-prev {
+  left: 35px;
+  z-index: 5;
+}
+
+.banner .slick-prev:before,
+.banner .slick-next:before {
+  font-size: 60px;
+  color: var(--cor-principal);
+}
+
+/* ############################# AREA ############################ */
+
+.area {
+  background-color: var(--cor-principal);
+  margin-top: -6px;
+}
+
+.area h2 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  padding: 58px 0;
+  margin-bottom: 0;
+  line-height: 1em;
+  text-align: center;
+}
+
+/* ############################# SOBRE ############################ */
+.sobre {
+  margin: 50px 0;
+  padding: 50px 0;
+}
+
+.sobre div {
+  align-items: stretch;
+}
+
+.imgSobre {
+  display: flex;
+  gap: 2.5em; /* 2.5 * 16 = 40px */
+}
+
+/* IMG 01 */
+.imgSobre img:nth-child(1) {
+  /* 590x480*/
+  width: 480px;
+}
+
+.imgSobre div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SELO */
+.imgSobre span {
+  position: relative;
+  top: 31px;
+  width: 230px;
+  height: 230px;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--cor-principal);
+  background-image: url(../img/selo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: rodar 15s linear infinite;
+}
+
+@keyframes rodar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* IMG 2*/
+.imgSobre img:nth-child(2) {
+  width: 320px;
+  border-radius: 0 6.25em 0 6.25em; /* 100 / 16 = 6.25em */
+}
+
+.txtSobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txtSobre h2 {
+  font-size: 2.5em;
+  font-family: var(--font-menu);
+  text-transform: uppercase;
+  margin-bottom: 0.7em;
+}
+
+.txtSobre h3 {
+  font-size: 1.8em;
+  font-family: var(--font-menu);
+  line-height: 1em;
+  margin-bottom: 0.7em;
+}
+
+.txtSobre span {
+  display: block;
+  margin-left: 30%;
+}
+
+.txtSobre p {
+  margin-bottom: 0;
+  text-indent: 1em;
+  margin-block-end: 0em;
+  line-height: 2.5em;
+  text-align: justify;
+}
+
+.txtSobre a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  background-color: var(--cor-principal);
+  border-radius: 25px;
+  color: #333333;
+  margin-top: 2.5em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.txtSobre a:hover {
+  background-color: var(--cor-destaque);
+  box-shadow: 0 0 5px var(--cor-principal);
+}
+
+/* ############################# FERRAMENTAS ############################ */
+
+.ferramentas {
+  background-color: var(--cor-principal);
+  padding: 50px 0;
+}
+
+.ferramentas h2 {
+  font-family: var(--font-menu);
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+
+.ferramentas > div {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ferramentas .slick-slide {
+  margin: 50px;
+}
+
+.ferramentas .slick-prev:before,
+.ferramentas .slick-next:before {
+  font-size: 60px;
+  color: var(--cor-destaque);
+}
+
+/* ############################# SERVIÇO ############################ */
+.servico {
+  padding: 50px 0;
+}
+
+.servico .container {
+  flex-direction: column;
+  align-items: start;
+}
+
+.servico h2 {
+  font-family: var(--font-menu);
+  font-size: 2.5em;
+  margin-bottom: 1.25em;
+}
+
+.servico h3 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+}
+
+.listaServico {
+  display: flex;
+  justify-content: space-between;
+}
+
+.painelServico {
+  width: 56%; /* 840 / 1500 = 56%  */
+  background-color: var(--cor-principal);
+  padding: 1.25em;
+}
+
+.painelServico h4 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  margin-bottom: 1.25em;
+}
+
+.painelServico p {
+  text-indent: 2em;
+  font-weight: bold;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  text-align: justify;
+}
+
+.painelServico a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  background-color: var(--cor-destaque);
+  border-radius: 25px;
+  color: #fff;
+  margin-top: 2.5em;
+  text-transform: uppercase;
+  font-family: var(--font-menu);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.painelServico a:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 5px var(--cor-destaque);
+}
+
+.oculto {
+  display: none;
+}
+
+/* Estilo dos links - Tab Painel */
+.tabPainel {
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tabPainel a {
+  font-size: 1.875em;
+  align-items: center;
+  padding-left: 22%;
+  display: inline-flex;
+  color: #333333;
+  font-family: var(--font-menu);
+  cursor: pointer;
+  height: 50px;
+}
+
+.tabPainel a:hover {
+  background: linear-gradient(
+    to right,
+    var(--cor-principal) 0%,
+    var(--cor-destaque) 100%
+  );
+}
+
+.tabPainel .tabAtivo {
+  background: linear-gradient(
+    to right,
+    var(--cor-principal) 0%,
+    var(--cor-destaque) 100%
+  );
+}
+
+/* ############################# EQUIPE  ############################ */
+.equipe {
+  padding: 50px 0;
+  background-color: var(--cor-principal);
+}
+
+.equipe > div {
+  display: block;
+}
+
+.equipe div > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.equipe div div div {
+  width: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipe ul {
+  display: flex;
+  gap: 3em;
+  margin-top: -64px;
+  margin-bottom: 19px;
+}
+
+.equipe a {
+  inline-size: 50px;
+  block-size: 50px;
+  background-color: var(--cor-destaque);
+  border-radius: 50px;
+  display: grid;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.equipe a:hover {
+  background-color: #1a1a1a;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--cor-principal);
+}
+
+.equipe h2 {
+  font-family: var(--font-menu);
+  font-size: 2.5em;
+  margin-bottom: 1.25em;
+  text-align: center;
+}
+
+.equipe h3 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  margin-bottom: 0.5em;
+}
+
+.equipe h4 {
+  font-size: 1.875em;
+}
+
+/* ############################# PQ NOS ESCOLHER  ############################ */
+
+.pqEscolher {
+  padding: 50px 0;
+}
+
+.pqEscolher > div {
+  width: var(--largura-maxima);
+  margin: 0 auto;
+  display: flex;
+  gap: 2em;
+}
+
+.pqEscolher h2 {
+  font-family: var(--font-menu);
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+
+.pqEscolher h3 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  margin-bottom: 50px;
+}
+
+.pqEscolher div div div:nth-child(2) {
+  display: flex;
+}
+
+.pqEscolher div div div:nth-child(2) div {
+  flex: 1;
+}
+
+.pqEscolher div div div div {
+  flex-direction: column;
+}
+
+.pqEscolher div div div div div {
+  height: 150px;
+  text-align: center;
+  padding: 1.25em;
+}
+
+.pqEscolher div div div div:nth-child(1) div:nth-child(1) {
+  background-color: var(--cor-destaque);
+  color: #fff;
+}
+.pqEscolher div div div div:nth-child(1) div:nth-child(2) {
+  background-color: var(--cor-principal);
+}
+
+.pqEscolher div div div div:nth-child(2) div:nth-child(2) {
+  background-color: var(--cor-destaque);
+  color: #fff;
+}
+.pqEscolher div div div div:nth-child(2) div:nth-child(1) {
+  background-color: var(--cor-principal);
+}
+
+.pqEscolher h4 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  margin-bottom: 0.3em;
+}
+
+.pqEscolher p {
+  text-indent: 2em;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  text-align: justify;
+}
+
+.pqEscolher article {
+  width: 40%;
+}
+
+/*############################## VIDEO ##################################*/
+
+.video {
+  background-image: url(../img/video.jpg);
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video a {
+  transition: transform 0.5s ease-in-out;
+}
+
+.video a:hover {
+  transform: scale(0.9);
+}
+
+.video img {
+  width: 100px;
+}
+
+/*############################## DEPOIMENTO ##################################*/
+
+.depo {
+  padding: 50px 0;
+}
+
+.depo h2 {
+  font-family: var(--font-menu);
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+
+.depo .container {
+  flex-direction: column;
+}
+
+.boxDepo {
+  display: flex;
+  gap: 2em;
+}
+
+.borda {
+  background: linear-gradient(
+    90deg,
+    var(--cor-destaque),
+    var(--cor-principal),
+    var(--cor-destaque)
+  );
+  width: 30%;
+  border-radius: 1em;
+  padding: 0.3em;
+  background-size: 200% 200%;
+  animation: bordaAnimada 5s linear infinite;
+}
+
+@keyframes bordaAnimada {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.borda > div {
+  background-color: #fff;
+  border-radius: inherit;
+  padding: 2em;
+  height: 500px;
+}
+
+.boxDepo img {
+  display: block;
+  margin: 0 auto 2em auto;
+  width: auto;
+  height: 150px;
+}
+
+.boxDepo ul {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.boxDepo ul img {
+  display: block;
+  margin: 0 auto 2em auto;
+  width: auto;
+  height: 40px;
+}
+
+.boxTitulo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxTitulo h3 {
+  font-family: var(--font-menu);
+  font-size: 1.875em;
+  margin-bottom: 0.5em;
+}
+
+.boxDepo p {
+  text-indent: 2em;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  text-align: justify;
+}
+
+/*############################## RODAPE ##################################*/
+
+.rodape > div:nth-child(1) {
+  background-color: var(--cor-principal);
+  padding: 70px 0;
+}
+
+.rodape > div:nth-child(2) {
+  background-color: var(--cor-destaque);
+}
+
+.rodape .container {
+  gap: 1em;
+}
+
+/* LOGO: 400 - 26% / MENU: 300 - 20% / END: 350 - 23% / Inscreva: 450 - 31%  */
+
+/* BLOCO 01 */
+.rodape .logo {
+  width: 22%;
+}
+
+.rodape .logo h2 {
+  font-size: 1.25em;
+  font-family: var(--font-menu);
+}
+
+.rodape .logo h2 span {
+  display: block;
+  text-align: right;
+}
+
+.rodape .logo ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rodape .logo a {
+  inline-size: 50px;
+  block-size: 50px;
+  background-color: #1a1a1a;
+  border-radius: 50px;
+  display: grid;
+  transition: filter 0.2s ease;
+}
+
+.rodape .logo a:hover {
+  filter: brightness(1.2);
+  background-color: var(--cor-destaque);
+}
+
+/* BLOCO 02 */
+.rodape .menu {
+  width: 20%;
+  text-align: center;
+}
+
+.rodape .menu li {
+  margin-bottom: 15px;
+}
+
+.rodape .menu li:last-child {
+  margin-bottom: 0;
+}
+
+.rodape .menu a {
+  color: #1a1a1a;
+  font-size: 1.25em;
+  font-family: var(--font-menu);
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.rodape .menu a:hover {
+  color: var(--cor-destaque);
+  transform: scale(1.05);
+}
+
+.rodape .menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--cor-destaque);
+  box-shadow: 0 0 10px var(--cor-destaque);
+  transition: width 0.3s ease;
+}
+
+.rodape .menu ul li a:hover::after,
+.rodape .menu ul li a.ativo::after {
+  width: 100%;
+}
+
+/* BLOCO 03 */
+.rodape .end {
+  width: 23.4%;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.rodape .end h2 {
+  font-size: 1.5em;
+  font-family: var(--font-menu);
+  margin-bottom: 38px;
+}
+
+.rodape .end address {
+  line-height: 2.3em;
+}
+
+.rodape .end a {
+  display: block;
+  color: #1a1a1a;
+}
+
+.rodape .end a:hover {
+  color: var(--cor-destaque);
+}
+
+/* BLOCO 04 */
+.rodape .inscreva {
+  width: 30%;
+}
+
+.rodape .inscreva h2 {
+  font-size: 1.875em;
+  font-family: var(--font-menu);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rodape .inscreva form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 0.2em;
+}
+
+.rodape .inscreva input[type="email"] {
+  height: 40px;
+  border: 1px solid #1a1a1a;
+  border-radius: 25px;
+  padding: 0 12px;
+  outline: none;
+  width: 84%;
+}
+
+.rodape .inscreva input[type="submit"] {
+  background: transparent url(../img/seta.png);
+  inline-size: 30px;
+  block-size: 30px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  border: 0;
+  cursor: pointer;
+}
+
+.rodape .inscreva label {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  cursor: pointer;
+}
+
+.rodape .inscreva input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.rodape .inscreva input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  transform: rotate(45deg);
+}
+
+.rodape > div:nth-child(2) .container {
+  justify-content: space-around;
+}
+
+.rodape > div:nth-child(2) h2 {
+  font-size: 0.95em;
+  font-family: var(--font-menu);
+  margin-bottom: 0;
+  padding: 5px 0;
+  text-align: center;
+  color: #fff;
+}
+
+/*
+######################################################################
+######################################################################
+##########################    PG SOBRE     ###########################
+######################################################################
+######################################################################
+*/
+.detalhe-sobre > div {
+  flex-direction: column;
+  gap: 5em;
+}
+
+.detalhe-sobre div div {
+  background-color: var(--cor-principal);
+  display: flex;
+  padding: 50px;
+  align-items: center;
+}
+
+.detalhe-sobre img {
+  width: 24%;
+  padding-right: 50px;
+}
+
+.detalhe-sobre p {
+  text-indent: 2em;
+  text-align: justify;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.detalhe-sobre .visao img {
+  order: 1;
+  padding-right: 0;
+  padding-left: 50px;
+}
+
+.detalhe-sobre .valores div {
+  flex-direction: column;
+}
+
+.detalhe-sobre .valores p {
+  align-self: baseline;
+}
+
+.detalhe-sobre span {
+  font-weight: 600;
+}
+
+/*
+######################################################################
+######################################################################
+##########################    PG CONTATO     #########################
+######################################################################
+######################################################################
+*/
+
+.formContato {
+  padding: 50px 0;
+  color: #333333;
+}
+
+.formContato .container {
+  flex-direction: column;
+  text-align: center;
+  align-items: normal;
+  gap: 1.2em;
+}
+
+.formContato h2 {
+  font-size: 2.5em;
+  font-family: var(--font-menu);
+}
+
+.formContato h3 {
+  font-size: 1.875em;
+  font-family: var(--font-menu);
+}
+
+/* Container laranja */
+.formContato form {
+  background-color: var(--cor-destaque);
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+
+/* form esquerda */
+.form-esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2em;
+}
+
+.form-esquerda input,
+.form-esquerda select {
+  height: 46px;
+  padding-left: 1em;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  font-size: 1.25em;
+  outline: none;
+}
+
+.formContato ::placeholder {
+  color: #9f9f9f;
+  opacity: 1;
+  font-style: normal;
+}
+
+.formContato select {
+  color: #9f9f9f;
+}
+
+select:valid {
+  color: #333333;
+}
+
+/* form direita */
+.form-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form-direita textarea {
+  height: 280px;
+  padding-left: 1em;
+  padding-top: 1em;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  font-size: 1.25em;
+  resize: none;
+  outline: none;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  gap: 2.5em;
+}
+
+.botoes button {
+  background-color: var(--cor-principal);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 15px;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.2s ease;
+}
+
+.botoes button:hover {
+  background-color: #1a1a1a;
+  color: var(--cor-principal);
+}
+
+/*
+######################################################################
+######################################################################
+##########################    PG SERVICO     #########################
+######################################################################
+######################################################################
+*/
+.pg-servico {
+  padding: 50px 0;
+}
+
+.pg-servico .container {
+  flex-direction: column;
+  text-align: center;
+}
+
+.pg-servico h2 {
+  font-size: 2.5em;
+  font-family: var(--font-menu);
+}
+
+.pg-servico h3 {
+  font-size: 1.875em;
+  font-family: var(--font-menu);
+}
+
+.pg-servico ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em;
+}
+
+.pg-servico ul li {
+  width: 45%;
+}
+
+.pg-servico ul > li > a {
+  display: flex;
+  border-radius: 1em;
+  box-shadow: 0 2px 5px var(--cor-destaque);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.pg-servico ul > li > a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.pg-servico figure {
+  flex: 0 0 300px;
+  /*
+    flex: <flex-grow> <flex-shrink> <flex-basis>;
+    flex-grow: Define se o item pode crescer para ocupar espaço livre no contêiner;
+    flex-shrink: Define se o item pode encolher quando o contêiner for menor do que a soma dos itens;
+    flex-basis: Define o tamanho base inicial do item antes de aplicar grow ou shrink.  
+  */
+  aspect-ratio: 1/1;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.lista-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pg-servico ul h3 {
+  font-family: var(--font-menu);
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+.pg-servico ul p {
+  padding: 0 15px;
+  color: #1a1a1a;
+  line-height: 1.5em;
+}
+.pg-servico ul span {
+  display: flex;
+  justify-content: center;
+  color: #1a1a1a;
+  padding: 0.5em 1em;
+  background-color: var(--cor-principal);
+}
+
+/*
+######################################################################
+######################################################################
+##########################    PG CLIENTE     #########################
+######################################################################
+######################################################################
+*/
+
+.cliente {
+  padding: 50px 0;
+}
+
+.cliente .container {
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.cliente-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 24%;
+  aspect-ratio: 9/16;
+  cursor: pointer;
+}
+
+.cliente-item img {
+  transition: all 0.4s ease;
+}
+
+.cliente-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 106, 0, 0.5);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.cliente-item a {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.cliente-item a .conteudo span {
+  font-size: 1.5em;
+  opacity: 0.8;
+}
+
+.cliente-item a .conteudo h4 {
+  font-size: 1.2em;
+  margin-top: 5px;
+  letter-spacing: 0.3em;
+}
+
+.cliente-item:hover img {
+  transform: scale(1.1);
+}
+
+.cliente-item:hover::before {
+  opacity: 1;
+}
+
+.cliente-item:hover a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+######################################################################
+######################################################################
+#######################    LAYOUT MOBILE     #########################
+######################################################################
+######################################################################
+
+Até 4 telas - Notebook, Tablet, Celulares
+
+Notebooks - 993 até 1200
+Tablet - 768 até 992
+Celulares - 0 - 768
+
+*/
+
+/* Notebooks - 993 - 1050 -  1200 */
+@media (max-width: 1200px) {
+  .container {
+    padding-inline: 0;
+  }
+
+  /* ############################# TOPO ############################ */
+  .topo .container {
+    gap: 1em;
+  }
+  .topo h1 {
+    width: 250px;
+  }
+  .topo nav ul {
+    justify-content: space-evenly;
+  }
+  .topo nav ul li a {
+    padding-inline: 0.8em;
+  }
+  .redes {
+    gap: 0.5em;
+  }
+
+  /* ############################# AREA ############################ */
+  .area .container {
+    justify-content: space-evenly;
+  }
+  .area h2 {
+    font-size: 1.2em;
+  }
+
+  /* ############################# SOBRE ############################ */
+  .sobre .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imgSobre img:nth-child(1) {
+    width: 480px;
+  }
+  .imgSobre img:nth-child(2) {
+    width: 320px;
+    border-radius: 0 6.25em 0 6.25em;
+  }
+  .txtSobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .txtSobre span {
+    margin-left: 10%;
+  }
+  .txtSobre div {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .txtSobre a {
+    margin-left: 10%;
+  }
+
+  /* ############################# SERVIÇO ############################ */
+  .painelServico {
+    padding: 1em;
+  }
+  .painelServico h4 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+  .painelServico p {
+    text-indent: 2em;
+    line-height: 2em;
+  }
+  .tabPainel {
+    gap: 0.5em;
+  }
+  .tabPainel a {
+    font-size: 1.2em;
+    padding-left: 12%;
+  }
+
+  /* ############################# PQ NOS ESCOLHER  ############################ */
+  .pqEscolher > div {
+    width: 100%;
+  }
+  .pqEscolher img {
+    display: none;
+  }
+
+  /*############################## DEPOIMENTO ##################################*/
+  .borda > div {
+    height: 400px;
+  }
+  .boxDepo img {
+    height: 100px;
+  }
+  .boxTitulo h3 {
+    font-size: 1.2em;
+  }
+} /* FIM do Notebooks - 993 até 1200 */
+
+/* Tablet - 768 - 800 -  992 */
+@media (max-width: 992px) {
+  .banner {
+    display: block;
+  }
+} /* FIM do Tablet - 768 até 992 */
+
+
+@media not all and (max-width:768px){
+  .abrir-menu,
+  .fechar-menu{
+    display: none;
+  }
+}
+
+/* Celulares - 0 - 400 - 768 */
+@media (max-width: 768px) {
+  .topo h1 {
+    width: 250px;
+  }
+
+  .topo nav{
+    background-color: rgba(51, 207, 255, 0.8);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    max-width: 400px;
+    width: 50%;
+    z-index: 100;
+    right: -200px;
+    transition: right 1s ease-in-out;
+  }
+
+  .menu-ativo .topo nav{
+    right: 0;
+  }
+
+  .topo nav ul {
+    flex-direction: column;
+  }
+
+  /* ########## MENU MOBILE ############# */
+  .abrir-menu{
+    background-image: url(../img/abrir-menu.png);
+    background-size: cover;
+    padding: 20px;
+    border: 0;
+    display: block;
+    margin-right: 10px;
+  }
+
+  .fechar-menu{
+    background-image: url(../img/fechar-menu.png);
+    background-size: cover;
+    padding: 20px;
+    border: 0;
+    display: block;
+    margin-right: 10px;
+  }
+
+
+
+
+  .redes {
+    display: none;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .area {
+    display: none;
+  }
+
+  .sobre div {
+    align-items: center;
+  }
+
+  .imgSobre {
+    display: none;
+  }
+
+  .ferramentas {
+    padding: 10px 0;
+  }
+  .ferramentas h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .ferramentas .slick-slide {
+    margin: 10px;
+  }
+
+  .servico {
+    text-align: center;
+  }
+
+  .painelServico {
+    width: 100%;
+    padding: 1.25em;
+    text-align: center;
+  }
+
+  .tabPainel {
+    display: none;
+  }
+
+  .equipe {
+    padding: 20px;
+    background-color: #fff;
+  }
+  .equipe div div div {
+    width: 45%;
+  }
+
+  .equipe ul {
+    gap: 1em;
+    margin-top: -35px;
+  }
+
+  .equipe a {
+    inline-size: 30px;
+    block-size: 30px;
+  }
+
+  .equipe h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+
+  .equipe h4 {
+    font-size: 0.9em;
+  }
+
+  .pqEscolher {
+    display: none;
+  }
+
+  .boxDepo {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .borda {
+    width: 90%;
+  }
+
+  .rodape > div:nth-child(1) {
+    padding: 10px 0;
+  }
+  .rodape .logo,
+  .rodape .menu {
+    display: none;
+  }
+
+  .rodape .container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .rodape .end {
+    width: 100%;
+  }
+
+  .rodape .end h2 {
+    margin-bottom: 5px;
+  }
+
+  .rodape .end address {
+    line-height: 1em;
+  }
+
+  .rodape .inscreva {
+    width: 80%;
+  }
+
+  .rodape .inscreva input[type="submit"] {
+    margin-top: 5px;
+    margin-right: -13px;
+  }
+
+  .rodape > div:nth-child(2) h2 {
+    font-size: 0.8em;
+    padding: 0;
+  }
+} /* FIM do Celulares - 0 - 768 */
